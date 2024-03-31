@@ -1,0 +1,93 @@
+* {
+  color: white;
+}
+input,
+textarea {
+  background-color: #383838;
+}
+
+input,button,select,p,label{
+  font-weight: 800;
+}
+
+button,select {
+  border: 0 !important;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 100px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+p {
+  margin: 6px 0;
+}
+
+.url-input {
+  width: 100%;
+  padding: 15px 10px 15px 90px;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.url-container {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  & > label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #54c754;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.textarea {
+  min-width: 100%;
+}
+
+.methods {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #54c754;
+  padding: 0px 10px;
+}
+
+.submit-button {
+  padding: 15px;
+  background-color: #54c754;
+  color: white;
+  border-radius: 5px;
+}
+
+.response {
+  width: 100%;
+  background-color: #383838;
+  border: #54c754 dashed 2px;
+  padding: 15px;
+}

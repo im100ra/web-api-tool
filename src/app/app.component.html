@@ -1,0 +1,35 @@
+<form class="form" [formGroup]="form" (submit)="submitForm()">
+  <div class="url-container">
+    <label> https://</label>
+    <input
+      formControlName="url"
+      placeholder="google.com"
+      type="text"
+      class="url-input"
+    />
+
+    <select name="methods" formControlName="method" class="methods">
+      <option value="POST">POST</option>
+      <option value="GET">GET</option>
+      <option value="PUT">PUT</option>
+      <option value="PATCH">PATCH</option>
+      <option value="OPTIONS">OPTIONS</option>
+    </select>
+  </div>
+
+  <div>
+    <p>Request Body:</p>
+    <textarea class="textarea" placeholder="{data}" formControlName="body">
+    </textarea>
+  </div>
+
+  <button type="submit" class="submit-button">submit</button>
+</form>
+
+<br />
+
+@if(response){
+<p>Request Respnse:</p>
+
+<div class="response" [innerHTML]="response | prettyJson"></div>
+}
