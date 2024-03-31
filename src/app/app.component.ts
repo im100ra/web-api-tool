@@ -12,7 +12,13 @@ import { PrettyJson } from './pipes/pretty-json.pipe';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HttpClientModule, ReactiveFormsModule,PrettyJson],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HttpClientModule,
+    ReactiveFormsModule,
+    PrettyJson,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -24,12 +30,11 @@ export class AppComponent {
     body: new FormControl('', { validators: [Validators.required] }),
   });
 
-  response!: object
+  response!: object;
   constructor(private _http: HttpClient) {}
 
   submitForm() {
     const formValue: request = this.form.value as request;
-    console.log(formValue.url);
 
     if (formValue.body.length > 0) {
       try {
@@ -46,14 +51,12 @@ export class AppComponent {
     this._http
       .request(formValue.method, formValue.url, { body: formValue.body })
       .subscribe({
-        next:(info) => {
-          console.log(info);
-          this.response = info
+        next: (info) => {
+          this.response = info;
         },
-        error:(error)=>{
-          console.log(error);
-          this.response = error
-        }
+        error: (error) => {
+          this.response = error;
+        },
       });
     return true;
   }
